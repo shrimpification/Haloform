@@ -1,0 +1,253 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    font-family: 'Helvetica', Arial, sans-serif;
+    color: #fff;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100%;
+    width: 100%;
+}
+
+.header {
+    position: fixed;
+    top: 40px;
+    left: 40px;
+    z-index: 100;
+    font-size: 14px;
+    color: #fff;
+    letter-spacing: 2px;
+    font-weight: 300;
+}
+
+.subtitle {
+    position: fixed;
+    top: 70px;
+    left: 40px;
+    z-index: 100;
+    font-size: 11px;
+    color: #aaa;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+.progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.1);
+    z-index: 200;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #FF5252, #FF4081, #E040FB, #7C4DFF, #536DFE, #448AFF);
+    width: 0%;
+    transition: width 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.continuous-container {
+    width: 100vw;
+    height: 500vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.fixed-text-section {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.fixed-text-section.active {
+    opacity: 1;
+}
+
+.section-content {
+    position: relative;
+    z-index: 11;
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+    padding: 0 40px;
+    margin-top: -100px;
+}
+
+.section-title {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.section-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #ddd;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.crane-container {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+.crane-container.active {
+    opacity: 1;
+}
+
+.crane-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#crane1, #crane2, #crane3, #crane4, #crane5 {
+    transform: translate(-50%, -50%);
+}
+
+.shapes-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.shape {
+    position: absolute;
+    border-radius: 2px;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.scroll-indicator {
+    position: fixed;
+    bottom: 40px;
+    left: 40px;
+    color: #666;
+    font-size: 12px;
+    letter-spacing: 1px;
+    z-index: 100;
+}
+
+.scroll-progress {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    color: #666;
+    font-size: 12px;
+    letter-spacing: 1px;
+    z-index: 100;
+}
+
+.scroll-hint {
+    position: fixed;
+    top: 50%;
+    right: 40px;
+    transform: translateY(-50%);
+    color: #666;
+    font-size: 12px;
+    letter-spacing: 1px;
+    z-index: 100;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+@media (max-width: 768px) {
+    .header, .subtitle {
+        top: 20px;
+        left: 20px;
+        font-size: 12px;
+    }
+    
+    .subtitle {
+        top: 45px;
+        font-size: 10px;
+    }
+    
+    .section-title {
+        font-size: 2.5rem;
+    }
+    
+    .section-text {
+        font-size: 1rem;
+    }
+    
+    .scroll-indicator,
+    .scroll-progress {
+        bottom: 20px;
+        left: 20px;
+        font-size: 10px;
+    }
+    
+    .scroll-progress {
+        right: 20px;
+    }
+    
+    .scroll-hint {
+        right: 20px;
+        font-size: 10px;
+    }
+    
+    .progress-container {
+        height: 3px;
+    }
+    
+    .section-content {
+        padding: 0 20px;
+        margin-top: -80px;
+    }
+    
+    .crane-container {
+        top: 35%;
+    }
+}

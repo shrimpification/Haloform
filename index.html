@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Continuous Vertical Scroll with 3D Cranes</title>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/loaders/OBJLoader.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+    
+    <div class="header">HALOFORM</div>
+    <div class="subtitle">WHERE IDEAS BECOME REAL</div>
+    
+    <div class="continuous-container" id="continuousContainer">
+        <div class="crane-container active" id="crane1">
+            <canvas class="crane-canvas" id="craneCanvas1"></canvas>
+        </div>
+        
+        <div class="crane-container" id="crane2">
+            <canvas class="crane-canvas" id="craneCanvas2"></canvas>
+        </div>
+        
+        <div class="crane-container" id="crane3">
+            <canvas class="crane-canvas" id="craneCanvas3"></canvas>
+        </div>
+        
+        <div class="crane-container" id="crane4">
+            <canvas class="crane-canvas" id="craneCanvas4"></canvas>
+        </div>
+        
+        <div class="crane-container" id="crane5">
+            <canvas class="crane-canvas" id="craneCanvas5"></canvas>
+        </div>
+        
+        <div class="fixed-text-section active" id="text1">
+            <div class="section-content">
+                <h1 class="section-title">A LIVING CANVAS</h1>
+                <p class="section-text">Shapes, light, and motion evolve in real time as your presence influences the system.</p>
+            </div>
+        </div>
+        
+        <div class="fixed-text-section" id="text2">
+            <div class="section-content">
+                <h1 class="section-title">RESPONSIVE VISUAL ENERGY</h1>
+                <p class="section-text">Forms shift, pulse, and transform with every movement. Haloform blends motion tracking and sound-reactive behavior to generate visuals that feel alive.</p>
+            </div>
+        </div>
+        
+        <div class="fixed-text-section" id="text3">
+            <div class="section-content">
+                <h1 class="section-title">EVOLUTION IN MOTION</h1>
+                <p class="section-text">This is an audiovisual organism that reacts to your gestures and continuously reshapes itself through interaction.</p>
+            </div>
+        </div>
+        
+        <div class="fixed-text-section" id="text4">
+            <div class="section-content">
+                <h1 class="section-title">INTERACTION AS CREATION</h1>
+                <p class="section-text">Your motion becomes part of the composition. Shapes orbit, shift speed, and distort based on your presence, creating a layered and immersive visual rhythm.</p>
+            </div>
+        </div>
+        
+        <div class="fixed-text-section" id="text5">
+            <div class="section-content">
+                <h1 class="section-title">ENDLESS POSSIBILITIES</h1>
+                <p class="section-text">Every session is unique. Haloform generates new arrangements of motion-reactive shapes each time, creating infinite possibilities within a continuous space.</p>
+            </div>
+        </div>
+        
+        <div class="shapes-container" id="shapesContainer"></div>
+    </div>
+    
+    <div class="scroll-indicator" id="scrollIndicator">SCROLL DOWN ↓</div>
+    <div class="scroll-progress">
+        <span id="scrollPercentage">0%</span>
+    </div>
+    <div class="scroll-hint">USE MOUSE WHEEL</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
